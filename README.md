@@ -1,2 +1,2 @@
 # Dice Roller Applet
-Dice Roller is a virtual set of polyhedral dice
+A virtual set of polyhedral dice
