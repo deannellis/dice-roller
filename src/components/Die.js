@@ -50,7 +50,6 @@ export default class DieFour extends React.Component {
     };
     
     resolveRoll() {
-        console.log('RESOLVED');
         clearTimeout(this.time);
         const newValue = Math.floor(Math.random() * ((this.props.dieType + 1) - 1)) + 1;
     
@@ -93,7 +92,6 @@ export default class DieFour extends React.Component {
                     onMouseDown={this.onMouseDown}
                     onMouseUp={this.onMouseUp}
                     onMouseOut={this.onMouseOut}
-                    onTouchEnd={this.onMouseUp}
                 />
                 <p 
                     className={`die__result--v2 ${typeof this.time != 'undefined' && 'die__result--hide'}`} //&& 'die__result--hide'
