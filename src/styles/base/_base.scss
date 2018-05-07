@@ -1,0 +1,19 @@
+hmtl {
+    // font-size: 62.5%; //for use w/ rems
+}
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    // background: $gray;
+    background-image: url("/images/img-noise-361x370.png");
+    background-repeat: repeat;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
