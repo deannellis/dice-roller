@@ -8,7 +8,7 @@ const DisplayResult = (props) => (
                 <h1 className="result__result">{props.lastResult}</h1>
             </div>
         : 
-            <p>Click and hold a die to roll</p>
+            <p>Click and hold a die to roll test</p>
         }
     </div>
 );
