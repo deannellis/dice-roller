@@ -92,6 +92,8 @@ export default class DieFour extends React.Component {
                     onMouseDown={this.onMouseDown}
                     onMouseUp={this.onMouseUp}
                     onMouseOut={this.onMouseOut}
+                    onTouchStart={this.onMouseDown}
+                    onTouchEnd={this.onMouseUp}
                 />
                 <p 
                     className={`die__result--v2 ${typeof this.time != 'undefined' && 'die__result--hide'}`} //&& 'die__result--hide'
