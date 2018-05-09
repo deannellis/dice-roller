@@ -24,3 +24,20 @@
     font-size: 72px;
     margin: 40px 0;
 }
+
+.result__greeting--desktop {
+    display: none;
+}
+
+.result__greeting--mobile {
+    display: inline;
+}
+
+@media only screen and (min-width: 768px) {
+    .result__greeting--mobile {
+        display: none;
+    }
+    .result__greeting--desktop {
+        display: inline;
+    }
+}

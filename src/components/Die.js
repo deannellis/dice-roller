@@ -86,7 +86,7 @@ export default class DieFour extends React.Component {
     
     render() {
         return (
-            <div className={`die--v2 ${typeof this.time != 'undefined' && 'die--shake'} ${typeof this.time == 'undefined' && 'die--shake-resolve'}`}>
+            <div className={`die ${typeof this.time != 'undefined' && 'die--shake'} ${typeof this.time == 'undefined' && 'die--shake-resolve'}`}>
                 <Icon
                     draggable="false"
                     name={`d${this.props.dieType.toString()}-orient-${this.state.rollPosition.toString()}`}
@@ -94,9 +94,10 @@ export default class DieFour extends React.Component {
                     onMouseUp={this.handleMouseUp}
                     onMouseOut={this.handleMouseOut}
                     onTap={this.resolveRoll}
+                    onClick={this.resolveRoll}
                 />
                 <p 
-                    className={`die__result--v2 ${typeof this.time != 'undefined' && 'die__result--hide'}`} //&& 'die__result--hide'
+                    className={`die__result ${typeof this.time != 'undefined' && 'die__result--hide'}`} //&& 'die__result--hide'
                     
                 >
                     {this.state.dieValue}
