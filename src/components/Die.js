@@ -93,7 +93,6 @@ export default class DieFour extends React.Component {
                     onMouseDown={this.handleMouseDown}
                     onMouseUp={this.handleMouseUp}
                     onMouseOut={this.handleMouseOut}
-                    onTap={this.resolveRoll}
                     onClick={this.resolveRoll}
                 />
                 <p 

@@ -9,8 +9,8 @@ const DisplayResult = (props) => (
             </div>
         : 
             <div>
-                <p className="result__greeting--desktop">Click and hold a die to roll testing</p>
-                <p className="result__greeting--mobile">Tap a die to roll testing</p>
+                <p className="result__greeting--desktop">click and hold a die to roll tasty</p>
+                <p className="result__greeting--mobile">tap a die to roll tasty</p>
             </div>
         }
     </div>
