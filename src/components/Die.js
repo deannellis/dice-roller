@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
+import ReactTouchEvents from "react-touch-events";
 export default class DieFour extends React.Component {
     
     constructor(props) {
@@ -11,9 +12,9 @@ export default class DieFour extends React.Component {
      this.time = undefined;
      this.orientVariations = 3;
      this.repeat = this.repeat.bind(this);
-     this.onMouseDown = this.onMouseDown.bind(this);
-     this.onMouseUp = this.onMouseUp.bind(this);
-     this.onMouseOut = this.onMouseOut.bind(this);
+     this.handleMouseDown = this.handleMouseDown.bind(this);
+     this.handleMouseUp = this.handleMouseUp.bind(this);
+     this.handleMouseOut = this.handleMouseOut.bind(this);
      this.roll = this.roll.bind(this);
      this.resolveRoll = this.resolveRoll.bind(this);
    }
@@ -69,15 +70,15 @@ export default class DieFour extends React.Component {
         this.time = setTimeout(this.repeat, 150);
     };
     
-    onMouseDown () {
+    handleMouseDown () {
         this.repeat();
     };
     
-    onMouseUp () {
+    handleMouseUp () {
         setTimeout(() => {this.resolveRoll()}, 500);
     };
     
-    onMouseOut () {
+    handleMouseOut () {
         if(typeof this.time != 'undefined') {
             this.resolveRoll();
         }
@@ -89,10 +90,10 @@ export default class DieFour extends React.Component {
                 <Icon
                     draggable="false"
                     name={`d${this.props.dieType.toString()}-orient-${this.state.rollPosition.toString()}`}
-                    onMouseDown={this.onMouseDown}
-                    onMouseUp={this.onMouseUp}
-                    onMouseOut={this.onMouseOut}
-                    onClick={this.onMouseUp}
+                    onMouseDown={this.handleMouseDown}
+                    onMouseUp={this.handleMouseUp}
+                    onMouseOut={this.handleMouseOut}
+                    onTap={this.resolveRoll}
                 />
                 <p 
                     className={`die__result--v2 ${typeof this.time != 'undefined' && 'die__result--hide'}`} //&& 'die__result--hide'

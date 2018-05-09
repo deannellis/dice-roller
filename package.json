@@ -10,7 +10,7 @@
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server --host $IP --public $C9_HOSTNAME",
     "start": "node server/server.js",
-    "heroku-postbuild" : "yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
@@ -31,6 +31,7 @@
     "react": "16.0.0",
     "react-dom": "16.0.0",
     "react-modal": "2.2.2",
+    "react-touch-events": "^2.1.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "validator": "8.0.0",
