@@ -8,7 +8,8 @@ export default class IndecisionApp extends React.Component {
         currentValue: undefined,
         drawerOpen: false,
         lastDieRolled: undefined,
-        lastResult: undefined
+        lastResult: undefined,
+        refreshKey: 0
     };
     
     handleOpenDrawer = () => {
@@ -26,6 +27,12 @@ export default class IndecisionApp extends React.Component {
     
     handleRollComplete = () => {};
     
+    updateRefreshKey = (newKey) => {
+        this.setState(() => ({
+            refreshKey: newKey
+        }));
+    };
+    
     render() {
         return (
             <div>
@@ -36,14 +43,15 @@ export default class IndecisionApp extends React.Component {
                 <Result
                     lastDieRolled={this.state.lastDieRolled}
                     lastResult={this.state.lastResult}
+                    refreshKey={this.state.refreshKey}
                 />
                 <div className="dice-container">
-                    <Die dieType={20} handleRollDie={this.handleRollDie}/>
-                    <Die dieType={12} handleRollDie={this.handleRollDie}/>
-                    <Die dieType={10} handleRollDie={this.handleRollDie}/>
-                    <Die dieType={8} handleRollDie={this.handleRollDie}/>
-                    <Die dieType={6} handleRollDie={this.handleRollDie}/>
-                    <Die dieType={4} handleRollDie={this.handleRollDie}/>
+                    <Die dieType={20} handleRollDie={this.handleRollDie} updateRefreshKey={this.updateRefreshKey} refreshKey={this.state.refreshKey}/>
+                    <Die dieType={12} handleRollDie={this.handleRollDie} updateRefreshKey={this.updateRefreshKey} refreshKey={this.state.refreshKey}/>
+                    <Die dieType={10} handleRollDie={this.handleRollDie} updateRefreshKey={this.updateRefreshKey} refreshKey={this.state.refreshKey}/>
+                    <Die dieType={8} handleRollDie={this.handleRollDie} updateRefreshKey={this.updateRefreshKey} refreshKey={this.state.refreshKey}/>
+                    <Die dieType={6} handleRollDie={this.handleRollDie} updateRefreshKey={this.updateRefreshKey} refreshKey={this.state.refreshKey}/>
+                    <Die dieType={4} handleRollDie={this.handleRollDie} updateRefreshKey={this.updateRefreshKey} refreshKey={this.state.refreshKey}/>
                 </div>
             </div>
         );

@@ -53,7 +53,8 @@ export default class DieFour extends React.Component {
     resolveRoll() {
         clearTimeout(this.time);
         const newValue = Math.floor(Math.random() * ((this.props.dieType + 1) - 1)) + 1;
-    
+        let newRefreshKey = this.props.refreshKey + 1;
+        
         this.setState(() => ({
             dieValue: newValue
         }));
@@ -63,6 +64,8 @@ export default class DieFour extends React.Component {
         this.setState({
             rollPosition: 1
         });
+        
+        this.props.updateRefreshKey(newRefreshKey);
     };
     
     repeat() {
@@ -96,7 +99,7 @@ export default class DieFour extends React.Component {
                     onClick={this.resolveRoll}
                 />
                 <p 
-                    className={`die__result ${typeof this.time != 'undefined' && 'die__result--hide'}`} //&& 'die__result--hide'
+                    className={`die__result ${typeof this.time != 'undefined' && 'die__result--hide'}`}
                     
                 >
                     {this.state.dieValue}

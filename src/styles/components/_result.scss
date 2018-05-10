@@ -23,6 +23,7 @@
 .result__result {
     font-size: 72px;
     margin: 40px 0;
+    animation: refresh .5s ease-out;
 }
 
 .result__greeting--desktop {
@@ -40,4 +41,14 @@
     .result__greeting--desktop {
         display: inline;
     }
+}
+
+@keyframes refresh {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
 }

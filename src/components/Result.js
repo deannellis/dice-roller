@@ -5,12 +5,12 @@ const DisplayResult = (props) => (
         {props.lastResult > 0 ?
             <div>
                 <p>With a <span className="result__die"> D{props.lastDieRolled} </span> you rolled:</p>
-                <h1 className="result__result">{props.lastResult}</h1>
+                <h1 key={props.refreshKey} className="result__result">{props.lastResult}</h1>
             </div>
         : 
             <div>
-                <p className="result__greeting--desktop">click and hold a die to roll tasty</p>
-                <p className="result__greeting--mobile">tap a die to roll tasty</p>
+                <p className="result__greeting--desktop">click and hold a die to roll</p>
+                <p className="result__greeting--mobile">tap a die to roll</p>
             </div>
         }
     </div>
