@@ -1,5 +1,4 @@
 .dice-container {
-    // background: $gray;
     background-image: url("/images/img-noise-361x370.png");
     background-repeat: repeat;
     color: white;
@@ -8,13 +7,21 @@
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
-    padding-top: $xl-u;
+    padding-top: $sm-u;
     border-top: 2px solid lighten($gray, 15%);
+}
+
+@media only screen and (min-width: 768px) {
+    .dice-container {
+        padding-top: $xl-u;
+    }
 }
 
 .die {
     position: relative;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .die__result {
