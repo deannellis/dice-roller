@@ -10,6 +10,7 @@ export default class DieFour extends React.Component {
         rollPosition: 1
      };
      this.time = undefined;
+     this.isRolling = false;
      this.orientVariations = 3;
      this.repeat = this.repeat.bind(this);
      this.handleMouseDown = this.handleMouseDown.bind(this);
@@ -61,6 +62,7 @@ export default class DieFour extends React.Component {
         
         this.props.handleRollDie(this.props.dieType, newValue);
         this.time = undefined;
+        this.isRolling = false;
         this.setState({
             rollPosition: 1
         });
@@ -75,15 +77,17 @@ export default class DieFour extends React.Component {
     
     handleMouseDown () {
         this.repeat();
+        this.isRolling = true;
     };
     
     handleMouseUp () {
+        this.isRolling = false;
         setTimeout(() => {this.resolveRoll()}, 500);
     };
     
     handleMouseOut () {
-        if(typeof this.time != 'undefined') {
-            this.resolveRoll();
+        if(this.isRolling === true) {
+            setTimeout(() => {this.resolveRoll()}, 500);
         }
     };
     
@@ -96,11 +100,11 @@ export default class DieFour extends React.Component {
                     onMouseDown={this.handleMouseDown}
                     onMouseUp={this.handleMouseUp}
                     onMouseOut={this.handleMouseOut}
-                    onClick={this.resolveRoll}
+                    onTouchStart={this.handleMouseDown}
+                    onTouchEnd={this.handleMouseUp}
                 />
                 <p 
                     className={`die__result ${typeof this.time != 'undefined' && 'die__result--hide'}`}
-                    
                 >
                     {this.state.dieValue}
                 </p>
