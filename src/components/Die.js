@@ -1,7 +1,7 @@
 import React from "react";
 import Icon from "./Icon";
 
-export default class DieFour extends React.Component {
+export default class Die extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
