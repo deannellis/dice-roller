@@ -3,7 +3,7 @@ import Header from "./Header";
 import Die from "./Die";
 import Result from "./Result";
 
-export default class IndecisionApp extends React.Component {
+export default class DiceRollerApp extends React.Component {
   state = {
     currentValue: undefined,
     drawerOpen: false,
@@ -24,8 +24,6 @@ export default class IndecisionApp extends React.Component {
       lastResult: result,
     }));
   };
-
-  handleRollComplete = () => {};
 
   updateRefreshKey = (newKey) => {
     this.setState(() => ({

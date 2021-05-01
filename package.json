@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "diceroller",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Dean Nellis",
@@ -11,6 +11,9 @@
     "dev-server": "webpack-dev-server --open --hot",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
+  },
+  "engines": {
+    "node": "<11.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
