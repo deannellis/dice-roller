@@ -8,7 +8,7 @@
     "serve": "live-server public/",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server --host $IP --public $C9_HOSTNAME",
+    "dev-server": "webpack-dev-server --open --hot",
     "start": "node server/server.js",
     "heroku-postbuild": "yarn run build:prod"
   },
