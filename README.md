@@ -26,5 +26,3 @@ npm run dev-server
 - [React](https://reactjs.org/)
 - [Webpack](https://webpack.js.org/)
 
-### Demo
-![rolling demo](https://deannellis.me/static/DiceRolling64-db270dd1667b5955e72e808b8fd230ab.gif)
